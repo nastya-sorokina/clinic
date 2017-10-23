@@ -1,0 +1,25 @@
+<body>
+    <div style="text-align:center">
+        <h1>
+           Добро пожаловать!
+        </h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Дата посещения</td>
+                    <td>Имя Питомца</td>
+                    <td>Врач</td>
+                    <td>Итог посещения</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{consultation.date | date: 'dd-MM-yyyy'}}</td>
+                    <td>{{consultation.petName}}</td>
+                    <td>{{consultation.doctorName}}</td>
+                    <td>{{consultation.text}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

@@ -1,0 +1,10 @@
+body{
+    background:#396;
+}
+
+table{
+    border-collapse: collapse; 
+}
+table td{
+    border: solid;
+}

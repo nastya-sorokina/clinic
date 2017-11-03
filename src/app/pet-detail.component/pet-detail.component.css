@@ -1,0 +1,19 @@
+h1{
+    font-size: 250%;
+}
+
+table{
+    border-collapse: collapse;
+}
+table td{
+    border: 3px solid;
+    font-size: x-large;
+    padding: 2px 8px;
+    text-align: center;
+}
+button{
+  height: 2em;
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+  cursor: pointer;
+}

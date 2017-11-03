@@ -1,0 +1,12 @@
+<div *ngIf="client">
+    <h1>
+      {{client.name}}
+    </h1>
+  <div>
+    <h2>Адрес: {{client.address}}</h2>
+    <h2>Телефон: {{client.phone}}</h2>
+  </div>
+  <div style="text-align: right">
+    <button (click)="goBack()">Назад</button>
+  </div>
+</div>

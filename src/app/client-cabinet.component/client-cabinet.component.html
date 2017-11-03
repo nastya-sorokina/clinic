@@ -1,8 +1,11 @@
-<body>
+<div>
     <div style="text-align:center">
-        <h1>
-           Добро пожаловать!
-        </h1>
+        <h2>
+           Вы вошли в личный кабинет клиента!
+        </h2>
+      <div style="text-align: right">
+        <button (click)="goBack()">Назад</button>
+      </div>
         <table class="table">
             <thead>
                 <tr>
@@ -22,4 +25,10 @@
             </tbody>
         </table>
     </div>
-</body>
+    <div style="text-align:right">
+        <nav>
+            <a [routerLink]="['/client-cabinet', clientId, '/my-pets']">Просмотреть всех животных</a>
+        </nav>
+    </div>
+
+</div>

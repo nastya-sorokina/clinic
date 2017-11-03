@@ -1,0 +1,34 @@
+<div>
+  <div style="text-align:center">
+    <h2>
+      Вы вошли в личный кабинет сотрудника!
+    </h2>
+    <div style="text-align: right">
+      <button (click)="goBack()">Назад</button>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Дата посещения</td>
+        <td>Имя Питомца</td>
+        <td>Владелец</td>
+        <td>Итог посещения</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let cons of consultations">
+        <td>{{cons.date | date: 'dd-MM-yyyy'}}</td>
+        <td>{{cons.petName}}</td>
+        <td>{{cons.ownerName}}</td>
+        <td>{{cons.text}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="text-align:right">
+    <nav>
+      <a routerLink="/all-pets" routerLinkActive="active">Просмотреть всех животных</a>
+    </nav>
+  </div>
+
+</div>

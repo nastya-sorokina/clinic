@@ -1,0 +1,26 @@
+<div *ngIf="pet">
+    <h1>
+        {{pet.name}}
+    </h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Дата посещения</td>
+                <td>Имя Питомца</td>
+                <td>Врач</td>
+                <td>Итог посещения</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cons of consultations">
+                <td>{{cons.date | date: 'dd-MM-yyyy'}}</td>
+                <td>{{cons.petName}}</td>
+                <td>{{cons.doctorName}}</td>
+                <td>{{cons.text}}</td>
+            </tr>
+        </tbody>
+    </table>
+  <div style="text-align: right">
+    <button (click)="goBack()">Назад</button>
+  </div>
+</div>

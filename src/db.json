@@ -1,0 +1,35 @@
+{
+    "pet": [
+        {"id": 1, "name": "Spot", "kind": "Собака", "age": 3, "ownerId": 1},
+        {"id": 2, "name": "Кузя", "kind": "Кот", "age": 2, "ownerId": 2},
+        {"id": 3, "name": "Джек", "kind": "Удав", "age": 1, "ownerId": 3},
+        {"id": 4, "name": "Кеша", "kind": "Попугай", "age": 1, "ownerId": 2}
+    ],
+    "consultation": [
+        { "id": 1, "clientId": 4, "petKind": "Собака", "petId": 1, "date": "2017-01-05",
+            "doctorId": 1, "text": "Смерили температуру, прописаны таблетки"},
+        { "id": 2, "clientId": 4, "petKind": "Собака", "petId": 1, "date": "2017-07-13",
+            "doctorId": 2, "text": "Блохи" },
+        { "id": 3, "clientId": 5, "petKind": "Кот", "petId": 2, "date": "2017-11-03",
+            "doctorId": 3, "text": "Кастрация" },
+        { "id": 4, "clientId": 6, "petKind": "Удав", "petId": 3, "date": "2017-07-07",
+            "doctorId": 1, "text": "Смерили температуру, прописаны таблетки" },
+        { "id": 5, "clientId": 5, "petKind": "Попугай", "petId": 4, "date": "2017-12-11",
+            "doctorId": 2, "text": "Смерили температуру, прописаны таблетки" }
+    ],
+    "user": [
+        {"id": 1, "name": "Иванов Иван Иванович", "login": "iii", "password": "123456", "type": 1,
+          "address": "г. Воронеж ул. Монтажная д.34 кв.43", "phone": "6548569"},
+        {"id": 2, "name": "Петров Иван Николаевич", "login": "petrov", "password": "petrov", "type": 1,
+          "address": "г. Воронеж ул. Кольцовская д.3 кв.45", "phone": "6788609"},
+        {"id": 3, "name": "Лопатин Кирилл Анатольевич", "login": "l_kirill", "password": "pass", "type": 1,
+          "address": "г. Воронеж ул. Пролетария д.4", "phone": "6232365"},
+        {"id": 4, "name": "Mr. Nice", "login": "spot", "password": "spot", "type": 2,
+          "address": "г. Воронеж ул. Литейная д.2 кв.37", "phone": "5874785"},
+        {"id": 5, "name": "Сидорова И. И.", "login": "inna", "password": "inna1234", "type": 2,
+          "address": "г. Воронеж ул. Линейная д.3а кв.8", "phone": "7657698"},
+        {"id": 6, "name": "Ильюхин Александр Владимирович", "login": "boy_1", "password": "qwerty", "type": 2,
+          "address": "г. Воронеж ул. Ленина д.10 кв.10", "phone": "5787694"}
+    ]
+}
+

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Location }                 from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'start-page',
@@ -14,7 +14,7 @@ export class StartPageComponent implements OnInit {
   private route: ActivatedRoute,
   private location: Location
   ) {}
-  
+
   ngOnInit(): void {
   }
 

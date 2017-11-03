@@ -36,3 +36,9 @@ button{
     margin-top: 0.5em;
     cursor: pointer;
 }
+.right{
+  text-align: right;
+}
+.flex{
+  display: flex;
+}

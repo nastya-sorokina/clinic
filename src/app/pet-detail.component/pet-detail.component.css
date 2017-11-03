@@ -17,3 +17,6 @@ button{
   margin-bottom: 0.5em;
   cursor: pointer;
 }
+.right{
+  text-align: right;
+}

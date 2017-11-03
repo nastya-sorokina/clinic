@@ -14,3 +14,9 @@ button{
   margin-top: 0.5em;
   cursor: pointer;
 }
+.center{
+  text-align:center;
+}
+.right{
+  text-align:right;
+}

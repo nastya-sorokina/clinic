@@ -1,9 +1,9 @@
 {
     "pet": [
-        {"id": 1, "name": "Spot", "kind": "Собака", "age": 3, "ownerId": 1},
-        {"id": 2, "name": "Кузя", "kind": "Кот", "age": 2, "ownerId": 2},
-        {"id": 3, "name": "Джек", "kind": "Удав", "age": 1, "ownerId": 3},
-        {"id": 4, "name": "Кеша", "kind": "Попугай", "age": 1, "ownerId": 2}
+        {"id": 1, "name": "Spot", "kind": "Собака", "age": 3, "ownerId": 4},
+        {"id": 2, "name": "Кузя", "kind": "Кот", "age": 2, "ownerId": 5},
+        {"id": 3, "name": "Джек", "kind": "Удав", "age": 1, "ownerId": 6},
+        {"id": 4, "name": "Кеша", "kind": "Попугай", "age": 1, "ownerId": 5}
     ],
     "consultation": [
         { "id": 1, "clientId": 4, "petKind": "Собака", "petId": 1, "date": "2017-01-05",

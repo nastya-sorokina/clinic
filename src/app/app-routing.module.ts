@@ -1,29 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ClientModule } from './client/client.module';
+import { DoctorModule } from './doctor/doctor.module';
+import { PetsModule } from './pets/pets.module';
 
-import { ClientCabinetComponent } from './client-cabinet.component/client-cabinet.component';
-import { DoctorCabinetComponent } from './doctor-cabinet.component/doctor-cabinet.component';
 import { StartPageComponent } from './start-page.component/start-page.component';
 import { AuthorizationComponent } from './authorization.component/authorization.component';
-import { MyPetsComponent } from './pets/my-pets.component';
-import { AllPetsComponent } from './pets/all-pets.component';
-import { PetDetailComponent } from './pet-detail.component/pet-detail.component';
-import { ClientDetailComponent } from './client-detail.component/client-detail.component';
 
 const routes: Routes = [
-  { path: 'client-cabinet/:id',  component: ClientCabinetComponent },
-  { path: 'doctor-cabinet/:id', component: DoctorCabinetComponent},
+  { path: 'doctor', loadChildren: './doctor/doctor.module#DoctorModule' },
   { path: '', redirectTo: '/start-page', pathMatch: 'full' },
   { path: 'start-page',  component: StartPageComponent },
   { path: 'authorization',  component: AuthorizationComponent },
-  { path: 'client-cabinet/:id/my-pets',  component: MyPetsComponent },
-  { path: 'all-pets',  component: AllPetsComponent },
-  { path: 'pet/detail/:id', component: PetDetailComponent },
-  { path: 'client/detail/:id', component: ClientDetailComponent },
+  { path: 'pet', loadChildren: './pets/pets.module#PetsModule' },
+  { path: 'client', loadChildren: './client/client.module#ClientModule' }
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
+  imports: [ RouterModule.forRoot(routes),
+             ClientModule,
+             DoctorModule,
+             PetsModule ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}
+

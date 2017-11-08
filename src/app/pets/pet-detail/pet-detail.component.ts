@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { Pet } from '../model/pet';
-import { PetService } from '../services/pet.service';
+import { Pet } from '../../model/pet';
+import { PetService } from '../../services/pet.service';
 
-import { Consultation } from '../model/consultation';
-import { ConsultationService } from '../services/consultation.service';
+import { Consultation } from '../../model/consultation';
+import { ConsultationService } from '../../services/consultation.service';
 
 import 'rxjs/add/operator/switchMap';
 

@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 
-import { PetService } from '../services/pet.service';
-import { Pet } from '../model/pet';
+import { PetService } from '../../services/pet.service';
+import { Pet } from '../../model/pet';
 
 @Component({
   selector: 'my-pets',
   templateUrl: './my-pets.component.html',
-  styleUrls: ['./pets.component.css']
+  styleUrls: ['./my-pets.component.css']
 })
 export class MyPetsComponent implements OnInit {
 

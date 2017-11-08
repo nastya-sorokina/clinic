@@ -1,7 +1,7 @@
-import { Injectable }    from '@angular/core';
-import {Http, Headers}   from "@angular/http";
+import { Injectable } from '@angular/core';
+import {Http, Headers} from "@angular/http";
 
-import { Consultation }  from '../model/consultation';
+import { Consultation } from '../model/consultation';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';

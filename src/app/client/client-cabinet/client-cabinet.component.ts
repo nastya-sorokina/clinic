@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 
-import { Consultation } from '../model/consultation';
-import { ConsultationService } from '../services/consultation.service';
+import { Consultation } from '../../model/consultation';
+import { ConsultationService } from '../../services/consultation.service';
 
 import 'rxjs/add/operator/switchMap';
 import { ActivatedRoute, ParamMap } from '@angular/router';

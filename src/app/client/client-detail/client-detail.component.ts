@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { UserService } from '../services/user.service';
-import { User } from '../model/user';
+import { UserService } from '../../services/user.service';
+import { User } from '../../model/user';
 
 import 'rxjs/add/operator/switchMap';
 

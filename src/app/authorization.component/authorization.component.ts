@@ -31,9 +31,9 @@ export class AuthorizationComponent implements OnInit {
       .subscribe(res => {
         mas = res;
         if (mas[0] === 2) {
-          this.router.navigate(['/client-cabinet', mas[1]]);
+          this.router.navigate(['/client/cabinet', mas[1]]);
         } else {
-          this.router.navigate(['/doctor-cabinet', mas[1]]);
+          this.router.navigate(['/doctor/cabinet', mas[1]]);
         }
       });
   }

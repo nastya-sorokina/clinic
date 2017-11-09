@@ -4,8 +4,8 @@ import { ClientModule } from './client/client.module';
 import { DoctorModule } from './doctor/doctor.module';
 import { PetsModule } from './pets/pets.module';
 
-import { StartPageComponent } from './start-page.component/start-page.component';
-import { AuthorizationComponent } from './authorization.component/authorization.component';
+import { StartPageComponent } from './start-page/start-page.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 const routes: Routes = [
   { path: 'doctor', loadChildren: './doctor/doctor.module#DoctorModule' },

@@ -8,8 +8,8 @@ import { PetsModule } from './pets/pets.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { StartPageComponent } from './start-page.component/start-page.component';
-import { AuthorizationComponent } from './authorization.component/authorization.component';
+import { StartPageComponent } from './start-page/start-page.component';
+import { AuthorizationComponent } from './authorization/authorization.component';
 
 @NgModule({
   declarations: [

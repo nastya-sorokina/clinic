@@ -1,7 +1,12 @@
 <div *ngIf="pet">
+  <div class="flex">
     <h1>
-        {{pet.name}}
+      {{pet.name}}
     </h1>
+    <div>
+      <button (click)="goBack()">Назад</button>
+    </div>
+  </div>
     <table class="table">
         <thead>
             <tr>
@@ -20,7 +25,5 @@
             </tr>
         </tbody>
     </table>
-  <div class="right">
-    <button (click)="goBack()">Назад</button>
-  </div>
+
 </div>

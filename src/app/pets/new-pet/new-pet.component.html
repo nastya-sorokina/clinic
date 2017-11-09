@@ -1,0 +1,33 @@
+<div class="flex">
+  <div class="block">
+    <label>Введите вид питомца: </label>
+    <br>
+    <input type="text" [(ngModel)]="kind">
+  </div>
+  <div class="block">
+    <label>Введите кличку питомца: </label>
+    <br>
+    <input type="text" [(ngModel)]="name">
+  </div>
+  <div class="block">
+    <label>Введите возраст питомца (цифрами): </label>
+    <br>
+    <input type="text" [(ngModel)]="age">
+  </div>
+  <div class="block">
+    <label>Выберите хозяина питомца: </label>
+    <br>
+    <select [(ngModel)]="selectedOwnerId">
+      <option *ngFor="let owner of owners"
+              value="{{owner.id}}"
+              text="{{owner.name}}">
+      </option>
+    </select>
+  </div>
+  <div class="block">
+    <button (click)="add()">Добавить</button>
+  </div>
+  <div class="block">
+    <button (click)="goBack()">Назад</button>
+  </div>
+</div>

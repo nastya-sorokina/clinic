@@ -1,5 +1,6 @@
 h1{
-    font-size: 250%;
+  font-size: 250%;
+  margin-top: 0;
 }
 
 table{
@@ -15,8 +16,13 @@ button{
   height: 2em;
   border-radius: 6px;
   margin-bottom: 0.5em;
+  margin-left: 95rem;
+  margin-top: 1em;
   cursor: pointer;
 }
 .right{
   text-align: right;
+}
+.flex{
+  display: flex;
 }

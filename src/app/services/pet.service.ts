@@ -29,6 +29,11 @@ export class PetService {
         return this.http.get(url).map(res => res.json() as Pet);
     }
 
+    addPet(pet: Pet): void {
+      const body = {name: pet.name, kind: pet.kind, age: pet.age, ownerId: pet.ownerId}
+      this.http.post(`${this.dbUrl}`, body).subscribe();
+    }
+
     searchPet(term: string): Observable<Pet[]> {
       return this.http
         .get(`${this.dbUrl}?name_like=${term}`)

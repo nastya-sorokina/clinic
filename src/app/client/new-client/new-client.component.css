@@ -1,0 +1,32 @@
+label{
+  font-size: 1.5em;
+}
+input{
+  font-size: 1.25em;
+  width: 16.5em;
+  margin-bottom: 1em;
+}
+select{
+  font-size: 1.25em;
+  width: 16.7em;
+  height: 1.5em;
+  margin-bottom: 1em;
+}
+.flex{
+  display: flex;
+}
+#back{
+  margin: 2em 0 0 90em;
+  height: 2em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#add{
+  margin: 0 0 0 0;
+  height: 2em;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#form{
+  margin-left: 1em;
+}

@@ -1,6 +1,8 @@
-<h1>{{title}}</h1>
-<div class="right">
-  <button (click)="goBack()">Назад</button>
+<div class="flex">
+  <h1>{{title}}</h1>
+  <div>
+    <button (click)="goBack()">Назад</button>
+  </div>
 </div>
 <div class="flex">
     <ul class="pets">
@@ -10,6 +12,8 @@
             {{pet.name}}
         </li>
     </ul>
-  <search></search>
+    <search></search>
+    <a class="link" routerLink="/pet/add-new" routerLinkActive="active">Добавить нового пациента</a>
+    <a class="link" routerLink="/client/add-new" routerLinkActive="active">Добавить нового пользователя</a>
 </div>
 

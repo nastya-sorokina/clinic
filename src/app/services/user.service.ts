@@ -36,4 +36,15 @@ export class UserService {
         .get(`${this.dbUrl}?name_like=${term}`)
         .map(response => response.json() as User[]);
     }
+
+    getUsersByType(type: number): Observable<User[]> {
+      let url = `${this.dbUrl}?type=${type}&_sort=name&_order=asc`;
+      return this.http.get(url).map(res =>  res.json());
+    }
+
+    addUser(user: User): void {
+      const body = {name: user.name, login: user.login, password: user.password, type: user.type,
+        address: user.address, phone: user.phone}
+      this.http.post(`${this.dbUrl}`, body).subscribe();
+    }
 }

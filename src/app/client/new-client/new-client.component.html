@@ -1,0 +1,36 @@
+<div class="flex">
+  <div id="form">
+    <br>
+    <label>Введите имя: </label>
+    <br>
+    <input type="text" [(ngModel)]="name">
+    <br>
+    <label>Введите адрес: </label>
+    <br>
+    <input type="text" [(ngModel)]="address">
+    <br>
+    <label>Введите номер телефона: </label>
+    <br>
+    <input type="text" [(ngModel)]="age">
+    <br>
+    <label>Выберите тип пользователя: </label>
+    <br>
+    <select [(ngModel)]="type">
+      <option value="1">Врач</option>
+      <option value="2">Владелец пациента</option>
+    </select>
+    <br>
+    <label>Введите логин: </label>
+    <br>
+    <input type="text" [(ngModel)]="login">
+    <br>
+    <label>Введите пароль: </label>
+    <br>
+    <input type="password" [(ngModel)]="password">
+    <br>
+    <button id="add" (click)="add()">Добавить</button>
+  </div>
+  <div>
+    <button id="back" (click)="goBack()">Назад</button>
+  </div>
+</div>

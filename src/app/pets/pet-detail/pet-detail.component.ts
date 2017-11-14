@@ -29,7 +29,7 @@ export class PetDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.paramMap
-    .switchMap((params: ParamMap) => this.petService.getPet(+params.get('id')))
+    .switchMap((params: ParamMap) => this.petService.getPetById(+params.get('id')))
     .subscribe(pet => this.pet = pet);
 
     this.route.paramMap

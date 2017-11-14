@@ -25,6 +25,9 @@ export class ConsultationService {
                 consult.petKind = result[0].petKind;
                 consult.date = new Date(result[0].date);
                 consult.text = result[0].text;
+                consult.clientId = result[0].clientId;
+                consult.petId = result[0].petId;
+                consult.doctorId = result[0].doctorId;
                 url = `${this.dbUrl}/pet/${result[0].petId}`;
                 this.http.get(url).map(pet => pet.json()).subscribe(pet => consult.petName = pet.name);
                 url = `${this.dbUrl}/user/${result[0].doctorId}`;
@@ -44,6 +47,9 @@ export class ConsultationService {
             consult.petKind = result[index].petKind;
             consult.date = new Date(result[index].date);
             consult.text = result[index].text;
+            consult.clientId = result[index].clientId;
+            consult.petId = result[index].petId;
+            consult.doctorId = result[index].doctorId;
             url = `${this.dbUrl}/pet/${result[index].petId}`;
             this.http.get(url).map(pet => pet.json()).subscribe(pet => consult.petName = pet.name);
             url = `${this.dbUrl}/user/${result[index].doctorId}`;
@@ -65,6 +71,9 @@ export class ConsultationService {
           consult.petKind = result[index].petKind;
           consult.date = new Date(result[index].date);
           consult.text = result[index].text;
+          consult.clientId = result[index].clientId;
+          consult.petId = result[index].petId;
+          consult.doctorId = result[index].doctorId;
           url = `${this.dbUrl}/pet/${result[index].petId}`;
           this.http.get(url).map(pet => pet.json()).subscribe(pet => consult.petName = pet.name);
           url = `${this.dbUrl}/user/${result[index].clientId}`;
@@ -73,5 +82,33 @@ export class ConsultationService {
         }
         return consultations;
       });
+    }
+
+    getConsultationById(id: number): Observable<Consultation> {
+      let url = `${this.dbUrl}/consultation?id=${id}`;
+      return this.http.get(url).map(res => {
+        let result = res.json();
+        let consult: Consultation = new Consultation();
+        consult.id = result[0].id;
+        consult.petKind = result[0].petKind;
+        consult.date = new Date(result[0].date);
+        consult.text = result[0].text;
+        consult.clientId = result[0].clientId;
+        consult.petId = result[0].petId;
+        consult.doctorId = result[0].doctorId;
+        url = `${this.dbUrl}/pet/${result[0].petId}`;
+        this.http.get(url).map(pet => pet.json()).subscribe(pet => consult.petName = pet.name);
+        url = `${this.dbUrl}/user/${result[0].clientId}`;
+        this.http.get(url).map(owner => owner.json()).subscribe(owner => consult.ownerName = owner.name);
+        return consult;
+      });
+    }
+
+    edit(consult: Consultation, date: string) {
+      const url = `${this.dbUrl}/consultation/${consult.id}`;
+      console.log(date);
+      const body = {clientId: consult.clientId, petKind: consult.petKind, petId: consult.petId, date: date,
+                    doctorId: consult.doctorId, text: consult.text};
+      return this.http.put(url, body , {headers: this.headers}).subscribe();
     }
   }

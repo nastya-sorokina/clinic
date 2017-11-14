@@ -13,6 +13,7 @@
         <td>Имя Питомца</td>
         <td>Владелец</td>
         <td>Итог посещения</td>
+        <td>Редактировать запись</td>
       </tr>
       </thead>
       <tbody>
@@ -21,6 +22,7 @@
         <td>{{cons.petName}}</td>
         <td>{{cons.ownerName}}</td>
         <td>{{cons.text}}</td>
+        <td><button (click)="edit(cons.id)">Редактировать</button></td>
       </tr>
       </tbody>
     </table>

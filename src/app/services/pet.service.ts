@@ -24,19 +24,24 @@ export class PetService {
       return this.http.get(url).map(res => res.json());
     }
 
-    getPet(id: number): Observable<Pet> {
+    getPetById(id: number): Observable<Pet> {
         const url = `${this.dbUrl}/${id}`;
         return this.http.get(url).map(res => res.json() as Pet);
     }
 
     addPet(pet: Pet): void {
-      const body = {name: pet.name, kind: pet.kind, age: pet.age, ownerId: pet.ownerId}
-      this.http.post(`${this.dbUrl}`, body).subscribe();
+      const body = {name: pet.name, kind: pet.kind, age: pet.age, ownerId: pet.ownerId};
+      this.http.post(`${this.dbUrl}`, body, {headers: this.headers}).subscribe();
     }
 
     searchPet(term: string): Observable<Pet[]> {
       return this.http
         .get(`${this.dbUrl}?name_like=${term}`)
         .map(response => response.json() as Pet[]);
+    }
+
+    getPetByPetNameAndOwnerId(name: string, ownerId: number): Observable<Pet> {
+      const url = `${this.dbUrl}?name=${name}&?ownerId=${ownerId}`;
+      return this.http.get(url).map(res => res.json() as Pet);
     }
 }

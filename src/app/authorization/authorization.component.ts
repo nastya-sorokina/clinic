@@ -30,11 +30,14 @@ export class AuthorizationComponent implements OnInit {
     this.userService.authorization(this.login, this.password)
       .subscribe(res => {
         mas = res;
-        if (mas[0] === 2) {
-          this.router.navigate(['/client/cabinet', mas[1]]);
-        } else {
-          this.router.navigate(['/doctor/cabinet', mas[1]]);
-        }
+        if (mas[0] === -1) {
+          alert('Неверный логин или пароль!');
+        }else
+          if (mas[0] === 2) {
+            this.router.navigate(['/client/cabinet', mas[1]]);
+          } else {
+            this.router.navigate(['/doctor/cabinet', mas[1]]);
+          }
       });
   }
 

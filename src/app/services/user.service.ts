@@ -22,12 +22,17 @@ export class UserService {
 
   authorization(login: string, password: string): Observable<Array<number>> {
 
-    let url = `${this.dbUrl}?login=${login}&?password=${password}`;
-    return this.http.get(url).map(res => {res.json();
+    let url = `${this.dbUrl}?login=${login}&password=${password}`;
+    return this.http.get(url).map(res => {
       let mas: Array<number> = new Array<number>();
-      mas.push(res.json()[0].type);
-      mas.push(res.json()[0].id);
-      return mas;
+      if (res.json().length !== 0) {
+        mas.push(res.json()[0].type);
+        mas.push(res.json()[0].id);
+        return mas;
+      }else {
+        mas[0] = -1;
+        return mas;
+      }
     });
   }
 

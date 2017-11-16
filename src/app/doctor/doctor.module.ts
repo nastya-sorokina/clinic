@@ -6,6 +6,7 @@ import { routing } from './doctor.routing';
 import { ConsultationService } from '../services/consultation.service';
 import { DoctorCabinetComponent } from './doctor-cabinet/doctor-cabinet.component';
 import { EditConsultationComponent } from './edit-consultation/edit-consultation.component';
+import { NewConsultationComponent } from './new-consultation/new-consultation.component';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { EditConsultationComponent } from './edit-consultation/edit-consultation
     FormsModule,
     routing
   ],
-  declarations: [DoctorCabinetComponent, EditConsultationComponent],
+  declarations: [DoctorCabinetComponent, EditConsultationComponent, NewConsultationComponent],
   providers: [ConsultationService]
 })
 export class DoctorModule { }

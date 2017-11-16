@@ -16,7 +16,8 @@ export class PetService {
     constructor(private http: Http) {}
 
     getPets(): Observable<Array<Pet>> {
-        return this.http.get(this.dbUrl).map(res => res.json());
+        const url = `${this.dbUrl}?_sort=name&_order=asc`;
+        return this.http.get(url).map(res => res.json());
     }
 
     getPetsByClientId(ownerId): Observable<Array<Pet>> {

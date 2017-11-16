@@ -1,0 +1,43 @@
+<div>
+  <div class="center">
+    <div class="right">
+      <button (click)="add()">Добавить</button>
+      <button (click)="goBack()">Назад</button>
+    </div>
+    <table class="table">
+      <thead>
+      <tr>
+        <td>Дата посещения</td>
+        <td>Имя Питомца</td>
+        <td>Вид</td>
+        <td>Владелец</td>
+        <td>Итог посещения</td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><input value="{{date}}" [(ngModel)]="date" placeholder="yyyy-MM-dd"></td>
+        <td>
+          <select [(ngModel)]="consultation.petId" (change)="getPetProperties()">
+            <option *ngFor="let pet of pets"
+                    value="{{pet.id}}"
+                    text="{{pet.name}}">
+            </option>
+          </select>
+        </td>
+        <td><input [(ngModel)]="consultation.petKind"></td>
+        <td>
+          <select [(ngModel)]="consultation.clientId" disabled>
+            <option *ngFor="let owner of owners"
+                    value="{{owner.id}}"
+                    text="{{owner.name}}">
+            </option>
+          </select>
+          <!--<option value="{{consultation.clientId}}" text="{{consultation.ownerName}}"></option>-->
+        </td>
+        <td><textarea value="{{consultation.text}}" [(ngModel)]="consultation.text"></textarea></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

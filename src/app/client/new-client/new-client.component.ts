@@ -29,7 +29,7 @@ export class NewClientComponent implements OnInit {
     user.login = this.login;
     user.password = this.password;
     this.userService.addUser(user);
-    document.location.reload();
+    alert('Пользователь добавлен!');
   }
 
   goBack(): void {

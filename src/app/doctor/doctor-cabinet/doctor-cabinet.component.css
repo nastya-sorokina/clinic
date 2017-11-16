@@ -1,5 +1,6 @@
 table{
   border-collapse: collapse;
+  margin-top: 0.5em;
 }
 table td{
   border: 3px solid;
@@ -19,4 +20,7 @@ button{
 }
 .right{
   text-align:right;
+}
+a{
+  font-size: 18px;
 }

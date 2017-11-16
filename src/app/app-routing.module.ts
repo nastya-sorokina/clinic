@@ -8,7 +8,7 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { AuthorizationComponent } from './authorization/authorization.component';
 
 const routes: Routes = [
-  { path: 'doctor', loadChildren: './doctor/doctor.module#DoctorModule' },
+  { path: 'doctor/cabinet/:id', loadChildren: './doctor/doctor.module#DoctorModule' },
   { path: '', redirectTo: '/start-page', pathMatch: 'full' },
   { path: 'start-page',  component: StartPageComponent },
   { path: 'authorization',  component: AuthorizationComponent },
@@ -17,10 +17,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes),
-             ClientModule,
-             DoctorModule,
-             PetsModule ],
+  imports: [ RouterModule.forRoot(routes)],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

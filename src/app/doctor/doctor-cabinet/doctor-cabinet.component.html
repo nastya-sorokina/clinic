@@ -4,13 +4,20 @@
       Вы вошли в личный кабинет сотрудника!
     </h2>
     <div class="right">
+      <button (click)="add()">Добавить новую запись</button>
       <button (click)="goBack()">Назад</button>
+    </div>
+    <div class="right">
+      <nav>
+        <a routerLink="/pet/all-pets" routerLinkActive="active">Просмотреть всех животных</a>
+      </nav>
     </div>
     <table class="table">
       <thead>
       <tr>
         <td>Дата посещения</td>
         <td>Имя Питомца</td>
+        <td>Вид</td>
         <td>Владелец</td>
         <td>Итог посещения</td>
         <td>Редактировать запись</td>
@@ -20,6 +27,7 @@
       <tr *ngFor="let cons of consultations">
         <td>{{cons.date | date: 'dd-MM-yyyy'}}</td>
         <td>{{cons.petName}}</td>
+        <td>{{cons.petKind}}</td>
         <td>{{cons.ownerName}}</td>
         <td>{{cons.text}}</td>
         <td><button (click)="edit(cons.id)">Редактировать</button></td>
@@ -27,10 +35,4 @@
       </tbody>
     </table>
   </div>
-  <div class="right">
-    <nav>
-      <a routerLink="/pet/all-pets" routerLinkActive="active">Просмотреть всех животных</a>
-    </nav>
-  </div>
-
 </div>

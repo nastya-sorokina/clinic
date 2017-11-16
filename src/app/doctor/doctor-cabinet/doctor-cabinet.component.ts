@@ -15,6 +15,7 @@ import 'rxjs/add/operator/switchMap';
 export class DoctorCabinetComponent implements OnInit {
 
   consultations: Consultation [];
+  id: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,7 +26,8 @@ export class DoctorCabinetComponent implements OnInit {
 
   getConsultations(): void {
     this.route.paramMap
-      .switchMap((params: ParamMap) => this.consultationService.getLastConsultationsByDoctorId(+params.get('id')))
+      .switchMap((params: ParamMap) => {this.id = params.get('id');
+      return this.consultationService.getLastConsultationsByDoctorId(+params.get('id'));})
       .subscribe(res => this.consultations = res);
   }
 
@@ -38,6 +40,10 @@ export class DoctorCabinetComponent implements OnInit {
   }
 
   edit(id: number): void {
-    this.router.navigate(['consultation/edit', id]);
+    this.router.navigate(['cabinet', this.id, 'consultation', 'edit', id]);
+  }
+
+  add(): void {
+    this.router.navigate(['cabinet', this.id, 'consultation', 'new']);
   }
 }

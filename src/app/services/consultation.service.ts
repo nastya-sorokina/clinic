@@ -104,11 +104,17 @@ export class ConsultationService {
       });
     }
 
-    edit(consult: Consultation, date: string) {
+    edit(consult: Consultation, date: string): void {
       const url = `${this.dbUrl}/consultation/${consult.id}`;
-      console.log(date);
       const body = {clientId: consult.clientId, petKind: consult.petKind, petId: consult.petId, date: date,
                     doctorId: consult.doctorId, text: consult.text};
-      return this.http.put(url, body , {headers: this.headers}).subscribe();
+      this.http.put(url, body , {headers: this.headers}).subscribe();
+    }
+
+    add(consult: Consultation, date: string): void {
+      const url = `${this.dbUrl}/consultation`;
+      const body = {clientId: consult.clientId, petKind: consult.petKind, petId: consult.petId, date: date,
+        doctorId: consult.doctorId, text: consult.text};
+      this.http.post(url, body, {headers: this.headers}).subscribe();
     }
   }

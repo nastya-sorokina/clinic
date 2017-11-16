@@ -24,7 +24,7 @@ export class NewPetComponent implements OnInit {
               private petService: PetService) { }
 
   getOwners(): void {
-    this.userService.getUsersByType(2).subscribe(owners => {
+    this.userService.getUsers().subscribe(owners => {
       this.owners = owners;
       this.selectedOwnerId = this.owners[0].id;
     });
@@ -37,7 +37,7 @@ export class NewPetComponent implements OnInit {
     pet.age = this.age;
     pet.ownerId = this.selectedOwnerId;
     this.petService.addPet(pet);
-    document.location.reload();
+    alert('Пациеент добавлен!');
   }
 
   goBack(): void {
